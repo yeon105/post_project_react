@@ -3,28 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 const postSlice = createSlice({
   name: "post",
   initialState: {
-    posts: [
-      { id: 1, title: "First Post", content: "First Post" },
-      { id: 2, title: "Second Post", content: "Second Post" },
-    ],
+    posts: [],
   },
   reducers: {
     onCreate: (state, action) => {
-      // (_title, _content)
-      state.posts.push({
-        id: state.posts.length + 1,
-        title: action.payload.title,
-        content: action.payload.content,
-      });
+      state.posts.push(action.payload);
     },
     onDelete: (state, action) => {
-      // (_id)
-      state.posts = state.posts.filter((p) => p.id !== Number(action.payload));
+      state.posts = state.posts.filter(
+        (p) => p.postId !== Number(action.payload)
+      );
     },
     onUpdate: (state, action) => {
-      // (_newList)
       state.posts = state.posts.map((p) =>
-        p.id === action.payload.id
+        p.postId === action.payload.postId
           ? {
               ...p,
               title: action.payload.title,

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function PostInfo() {
   const list = useSelector((state) => state.post.posts);
   const { postId } = useParams();
-  const item = list.find((p) => p.id === Number(postId));
+  const item = list.find((p) => p.postId === Number(postId));
 
   return (
     <div>
