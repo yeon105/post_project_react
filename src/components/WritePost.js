@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { onCreate } from "../reduxFile/postSlice";
 import { useNavigate } from "react-router-dom";
-import apiClient from "../api/axiosinstance";
+import apiClient from "../api/axiosInstance";
 
 export default function WritePost() {
   const navigate = useNavigate();

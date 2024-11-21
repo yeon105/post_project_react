@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { onDelete } from "../reduxFile/postSlice";
-import apiClient from "../api/axiosinstance";
+import apiClient from "../api/axiosInstance";
 
 export default function PostList() {
   const navigate = useNavigate();

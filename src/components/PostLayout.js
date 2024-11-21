@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import apiClient from "../api/axiosinstance";
+import apiClient from "../api/axiosInstance";
 import { onCreate } from "../reduxFile/postSlice";
 import { useDispatch } from "react-redux";
 

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { onUpdate } from "../reduxFile/postSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import apiClient from "../api/axiosinstance";
+import apiClient from "../api/axiosInstance";
 
 export default function EditPost() {
   const { editId } = useParams();
