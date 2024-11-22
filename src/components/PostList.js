@@ -9,9 +9,9 @@ export default function PostList() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.post.posts);
 
-  const handleDelete = async (e) => {
+  const handleDelete = async (id) => {
     try {
-      const response = await apiClient.delete("/post/" + e.target.id);
+      const response = await apiClient.delete("/post/" + id);
 
       dispatch(onDelete(response.data));
     } catch (error) {
@@ -35,7 +35,7 @@ export default function PostList() {
     <li key={p.postId}>
       <NavLink to={"/list/" + p.postId}>{p.title}</NavLink>
       &nbsp;
-      <button id={p.postId} onClick={handleDelete}>
+      <button id={p.postId} onClick={() => handleDelete(p.postId)}>
         Delete
       </button>
       &nbsp;
